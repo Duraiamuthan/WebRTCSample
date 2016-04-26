@@ -39,7 +39,7 @@ What I am trying to do ?
 
 I am trying to create a WebRTC based VOIP application which is hybrid.
 
-I have a webapplication that will facilitate WebRTC Calls between devices ,It works with Android 5.0+ as its webview supports WebRTC APIs completely.But in iOS as it doesn't support ....I am going to support the APIs which are not supported using native AppRTC sdk.
+I have a webapplication that will facilitate WebRTC Calls between devices ,It works with Android 5.0+,FireFox,Chrome etc.. as its webview supports WebRTC APIs completely.But in iOS as it doesn't support ....I am going to support the APIs which are not supported using native AppRTC sdk.
 
 For example In the project if you explore index.html you will see I have intercepted a WebRTC API navigator.getusermedia which is not supported in WebView and given the implementation using AppRTC native SDK.
 
