@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+  <meta name="mobile-web-app-capable" content="yes">
+  <title>WebRTC VOIP</title>
+  <script type="text/javascript">
+  function makeCall()
+  {
+      navigator.getUserMedia({audio: true,video: true},successCallBack,failureCallBack)
+  }
+  function setRoomId(roomId)
+  {
+      document.getElementById('roomid').value=roomId;
+  }
+  function successCallBack(){
+      alert('success')
+  }
+  function failureCallBack(){
+      alert('failure')
+  }
+  function uniqueid(){
+      var idstr=String.fromCharCode(Math.floor((Math.random()*25)+65));
+      do {
+          var ascicode=Math.floor((Math.random()*42)+48);
+          if (ascicode<58 || ascicode>64){
+              idstr+=String.fromCharCode(ascicode);
+          }
+      } while (idstr.length<32);
+      return (idstr.substring(2,12));
+  }
+  </script>
+</head>
+<body>
+   <center>
+  <input type="text" id="roomid" style="width:250px">
+  <input type="button" value="VOIP Call" onclick="makeCall();"/>
+   </center>
+  <script type="text/javascript">
+      navigator.getUserMedia = function(constraints, onSuccess, onError){
+          myWebRTC.getUserMedia(document.getElementById('roomid').value)
+      }
+      setRoomId(uniqueid())
+  </script>
+</body>
+</html>
