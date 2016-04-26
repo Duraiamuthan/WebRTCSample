@@ -35,6 +35,10 @@ Yes ...
 
 that's it you'll get connected !
 
+Note:
+
+When you make VOIP call from two devices using the same Room Name the call gets connected but sometimes its quite unstable as its not the right rather a workaround.
+
 What I am trying to do ?
 
 I am trying to create a WebRTC based VOIP application which is hybrid.
