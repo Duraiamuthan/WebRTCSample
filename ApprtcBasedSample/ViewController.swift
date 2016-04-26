@@ -161,7 +161,9 @@ class ViewController: UIViewController, ARDAppClientDelegate, RTCEAGLVideoViewDe
     
     func disconnect(){
         appClient?.disconnect()
+        if let remoteVideoTrack=self.remoteVideoTrack {
         self.remoteVideoTrack!.removeRenderer(self.remoteVideoView)
+        }
         self.localVideoTrack!.removeRenderer(self.localVideoView)
         self.remoteVideoTrack=nil;
         self.localVideoTrack=nil;
